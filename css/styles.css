@@ -1,0 +1,446 @@
+/* Fonts */
+@font-face {
+  font-family: Acorn;
+  src: url("../fonts/acorn-medium.ttf");
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("../fonts/montserrat.ttf");
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Variables */
+:root {
+  --text-color: #0a6e8a;
+  --text-hover: #3a9fc4;
+  --lighter-text-color: rgba(10, 110, 138, 0.8);
+  --nav-background-hover: rgba(10, 110, 138, 0.3);
+  --nav-text-hover: white;
+  --menu-text-color: #e7f5f9;
+  --menu-background-color: #0a6e8a;
+  --accent-color: #00b8d4;
+  --accent-light: #80deea;
+  --accent-dark: #0088a3;
+  --project-text-color: #2c3e50;
+  --acorn-font: 'Acorn', sans-serif;
+  --montserrat-font: 'Montserrat', sans-serif;
+  --rhythm: 1.5rem;
+  --nav-height: 48px;
+  --background-color: #f9fcfd;
+  --card-shadow: 0 6px 12px rgba(10, 110, 138, 0.15);
+  --today-border-color: #00b8d4;
+}
+
+/* Basic styling for the timesheet app */
+body {
+  font-family: var(--montserrat-font);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  background-image: linear-gradient(to bottom, rgba(10, 110, 138, 0.02), rgba(10, 110, 138, 0.05));
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+.container-fluid {
+  max-width: 1920px;
+  padding: 0 2rem;
+}
+
+.content-wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.login-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.current-date {
+  color: var(--text-hover);
+  font-family: var(--montserrat-font);
+}
+
+.welcome-message {
+  font-size: 1.2rem;
+  color: var(--text-hover);
+  margin-bottom: 0;
+  border-left: 4px solid var(--text-color);
+  padding-left: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--acorn-font);
+  color: var(--text-color);
+}
+
+.card {
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  border: none;
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: var(--menu-background-color);
+  color: var(--menu-text-color);
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+  padding: 1rem 1.25rem;
+  font-family: var(--acorn-font);
+  letter-spacing: 0.5px;
+}
+
+.card-title {
+  color: var(--accent-color);
+  font-weight: 600;
+  font-family: var(--acorn-font);
+  border-bottom: 1px solid rgba(10, 110, 138, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
+.btn-outline-primary {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.btn-outline-secondary {
+  color: var(--text-color);
+  border-color: var(--lighter-text-color);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--lighter-text-color);
+  color: white;
+}
+
+/* Calendar styling */
+.calendar-day {
+  width: 14.28%;
+  height: 100px;
+  border: 1px solid #dee2e6;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  background-color: white;
+}
+
+.calendar-day:hover {
+  background-color: var(--nav-background-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.calendar-day .day-number {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.calendar-day .holiday-name {
+  font-size: 0.7rem;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  text-align: center;
+}
+
+.holiday {
+  background-color: rgba(0, 184, 212, 0.1);
+  color: var(--accent-dark);
+}
+
+.selected-date {
+  background-color: var(--nav-background-hover);
+  border: 2px solid var(--accent-color);
+  font-weight: bold;
+}
+
+.today-marker {
+  border: 2px solid var(--today-border-color);
+  position: relative;
+}
+
+.today-marker::after {
+  content: "Today";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 0.6rem;
+  background-color: var(--today-border-color);
+  color: white;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Form styling */
+.form-control:focus {
+  border-color: var(--text-color);
+  box-shadow: 0 0 0 0.25rem rgba(16, 90, 78, 0.25);
+}
+
+.form-control-lg {
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+.form-label {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+/* Media queries for larger screens */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1800px;
+  }
+  
+  .calendar-day {
+    height: 120px;
+    padding: 12px;
+  }
+  
+  .calendar-day .day-number {
+    font-size: 1.3rem;
+  }
+  
+  .btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  h4 {
+    font-size: 1.5rem;
+  }
+  
+  .card-header {
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+}
+
+/* Navbar styling */
+.custom-navbar {
+  background: linear-gradient(to right, var(--menu-background-color), var(--accent-dark));
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  box-shadow: var(--card-shadow);
+}
+
+.custom-navbar .navbar-brand {
+  color: var(--menu-text-color);
+  font-family: var(--acorn-font);
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.custom-navbar .nav-link {
+  color: var(--menu-text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.custom-navbar .navbar-text {
+  color: var(--menu-text-color);
+}
+
+.role-badge {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+/* Badge styling */
+.badge.bg-success {
+  background-color: var(--text-color) !important;
+}
+
+.badge.bg-warning {
+  background-color: var(--accent-light) !important;
+  color: var(--text-color);
+}
+
+/* List group styling */
+.list-group-item {
+  border-left: 3px solid var(--text-color);
+  margin-bottom: 5px;
+  transition: all 0.2s ease;
+}
+
+.list-group-item:hover {
+  transform: translateX(3px);
+  background-color: rgba(10, 110, 138, 0.05);
+}
+
+/* Stats cards */
+.stats-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  border-top: 3px solid var(--accent-color);
+  background: linear-gradient(to bottom right, white, rgba(128, 222, 234, 0.1));
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(10, 110, 138, 0.2);
+}
+
+.stats-card {
+  cursor: pointer;
+}
+
+.stats-card h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.stats-icon {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+/* Progress bar */
+.progress {
+  height: 10px;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  background-color: rgba(16, 90, 78, 0.1);
+}
+
+.progress-bar {
+  background-color: var(--accent-color);
+  border-radius: 5px;
+}
+
+/* Table styling for larger screens */
+.table-responsive {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  background-color: rgba(10, 110, 138, 0.1);
+  color: var(--text-color);
+  font-weight: 600;
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(10, 110, 138, 0.05);
+}
+
+/* Nav tabs */
+.nav-tabs .nav-link {
+  color: var(--text-color);
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--accent-color);
+  background-color: transparent;
+  border-bottom: 3px solid var(--accent-color);
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+  border-bottom: 3px solid rgba(10, 110, 138, 0.3);
+}
+
+/* App title styling */
+.app-title h1 {
+  font-family: var(--acorn-font);
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.app-title .lead {
+  color: var(--text-hover);
+  font-size: 1.2rem;
+}
+
+/* Calendar month/year styling */
+.month-year {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  font-family: var(--acorn-font);
+}
+
+.title-underline {
+  height: 4px;
+  width: 100px;
+  background: linear-gradient(to right, var(--accent-dark), var(--accent-color), var(--accent-light), transparent);
+  margin: 1rem auto;
+  border-radius: 2px;
+}
