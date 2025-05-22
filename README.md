@@ -4,7 +4,7 @@ A modern web application for tracking and managing employee work hours, replacin
 
 ## Project Background
 
-This application was developed during a company-wide hackathon focused on leveraging Amazon Q for AI-assisted development. The 4-hour challenge encouraged participants to explore how AI tools could accelerate development workflows and enhance productivity.
+This application was developed during a company-wide hackathon focused on leveraging Amazon Q for AI-assisted development. The 6-hour challenge encouraged participants to explore how AI tools could accelerate development workflows and enhance productivity.
 
 ## Key Features
 
