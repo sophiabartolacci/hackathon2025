@@ -34,11 +34,7 @@ new Vue({
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">
-                    <i class="bi bi-speedometer2"></i> Dashboard
-                  </a>
-                </li>
+                <!-- Dashboard link removed -->
               </ul>
               <span class="navbar-text me-3">
                 <i class="bi bi-person-circle"></i> 

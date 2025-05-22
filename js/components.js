@@ -324,7 +324,10 @@ Vue.component('employee-dashboard', {
               <div v-if="currentTimesheets.length === 0" class="text-center py-3">
                 No timesheet submissions yet.
               </div>
-              <ul v-else class="list-group">
+              <h5 class="card-title mb-3" v-if="currentTimesheets.filter(t => t.status === 'approved' || t.status === 'rejected').length > 0">
+                <i class="bi bi-clock-history"></i> Past Approvals/Rejections
+              </h5>
+              <ul v-if="currentTimesheets.length > 0" class="list-group">
                 <li v-for="timesheet in currentTimesheets" :key="timesheet.id" class="list-group-item">
                   <div class="d-flex justify-content-between align-items-center">
                     <strong>{{ timesheet.startDate }} to {{ timesheet.endDate }}</strong>

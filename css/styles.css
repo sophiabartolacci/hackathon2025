@@ -19,24 +19,24 @@
 
 /* Variables */
 :root {
-  --text-color: #0a6e8a;
-  --text-hover: #3a9fc4;
-  --lighter-text-color: rgba(10, 110, 138, 0.8);
-  --nav-background-hover: rgba(10, 110, 138, 0.3);
+  --text-color: #085a73;
+  --text-hover: #2a8aad;
+  --lighter-text-color: rgba(8, 90, 115, 0.8);
+  --nav-background-hover: rgba(8, 90, 115, 0.3);
   --nav-text-hover: white;
   --menu-text-color: #e7f5f9;
-  --menu-background-color: #0a6e8a;
-  --accent-color: #00b8d4;
+  --menu-background-color: #085a73;
+  --accent-color: #00a5be;
   --accent-light: #80deea;
-  --accent-dark: #0088a3;
-  --project-text-color: #2c3e50;
+  --accent-dark: #007790;
+  --project-text-color: #263545;
   --acorn-font: 'Acorn', sans-serif;
   --montserrat-font: 'Montserrat', sans-serif;
   --rhythm: 1.5rem;
   --nav-height: 48px;
   --background-color: #f9fcfd;
-  --card-shadow: 0 6px 12px rgba(10, 110, 138, 0.15);
-  --today-border-color: #00b8d4;
+  --card-shadow: 0 6px 12px rgba(8, 90, 115, 0.15);
+  --today-border-color: #00a5be;
 }
 
 /* Basic styling for the timesheet app */
@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--menu-text-color);
   border-top-left-radius: 12px !important;
   border-top-right-radius: 12px !important;
-  padding: 1rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   font-family: var(--acorn-font);
   letter-spacing: 0.5px;
 }
@@ -180,11 +180,21 @@ h1, h2, h3, h4, h5, h6 {
   left: 5px;
   right: 5px;
   text-align: center;
+  font-weight: bold;
+  background-color: rgba(0, 184, 212, 0.55);
+  padding: 2px;
+  border-radius: 3px;
+}
+
+.holiday-name {
+  color: #001B3A;
 }
 
 .holiday {
-  background-color: rgba(0, 184, 212, 0.1);
-  color: var(--accent-dark);
+  background-color: rgba(0, 184, 212, 0.2);
+  color: #006680;
+  border: 1px dashed var(--accent-color);
+  position: relative;
 }
 
 .selected-date {
@@ -367,15 +377,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Progress bar */
 .progress {
-  height: 10px;
-  border-radius: 5px;
+  height: 14px;
+  border-radius: 7px;
   margin-top: 0.5rem;
   background-color: rgba(16, 90, 78, 0.1);
 }
 
 .progress-bar {
   background-color: var(--accent-color);
-  border-radius: 5px;
+  border-radius: 7px;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: bold;
 }
 
 /* Table styling for larger screens */
