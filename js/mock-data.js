@@ -26,25 +26,13 @@ let timesheets = [
   {
     id: 1,
     employeeId: 1,
-    startDate: '2025-01-01',
-    endDate: '2025-01-15',
+    startDate: '2025-04-04',
+    endDate: '2025-04-18',
     entries: [
-      { date: '2025-01-02', hours: 8 },
-      { date: '2025-01-03', hours: 7.5 }
+      { date: '2025-04-04', hours: 8 },
+      { date: '2025-04-05', hours: 7.5 }
     ],
     status: 'pending'
-  },
-  {
-    id: 2,
-    employeeId: 1,
-    startDate: '2024-12-16',
-    endDate: '2024-12-31',
-    entries: [
-      { date: '2024-12-18', hours: 9 },
-      { date: '2024-12-19', hours: 8.5 }
-    ],
-    status: 'rejected',
-    rejectionReason: 'Missing project code for overtime hours. Please include project reference for hours over 8.'
   }
 ];
 
