@@ -1,102 +1,46 @@
-# Hourly Timesheet UI - Hackathon Guide
+# Timesheet Portal
 
-A 4-hour hackathon project utilizing Amazon Q to create a simple timesheet UI for hourly employees.
+A modern web application for tracking and managing employee work hours, replacing manual Google Sheets tracking for hourly paid employees.
 
-## Project Overview
+## Project Background
 
-This project aims to create a simple timesheet UI with role-based access:
+This application was developed during a company-wide hackathon focused on leveraging Amazon Q for AI-assisted development. The 4-hour challenge encouraged participants to explore how AI tools could accelerate development workflows and enhance productivity.
 
-- **Employees** can enter time on a biweekly basis
-- **Managers** can approve or reject employee time entries
-- System integrates company holidays (no time entry allowed on holidays)
+## Key Features
 
-## 4-Hour Hackathon Approach (Using Vue.js)
+### For Employees
+- **Time Entry**: Log working hours on a biweekly basis through an intuitive calendar interface
+- **Holiday Integration**: Automatic display of company holidays with time entry restrictions
+- **Progress Tracking**: Visual progress bars showing completion toward biweekly hour targets
+- **Submission History**: View past timesheet submissions and their approval status
 
-### Hour 1: Setup & Planning (0:00-1:00)
+### For Managers
+- **Approval Dashboard**: Review pending timesheet submissions from all employees
+- **Feedback System**: Provide rejection reasons when timesheet entries need correction
+- **Employee Overview**: View employee statistics and submission history
+- **Status Tracking**: Monitor approved, rejected, and pending timesheets
 
-1. **Project Setup (20 min)**
-   - Create basic HTML structure with Vue.js CDN
-   - Set up CSS file with minimal styling
-   - Create mock data files
+## Technology Stack
 
-2. **Data Modeling (20 min)**
-   - Define user roles and sample users
-   - Create timesheet data structure
-   - Define company holidays list
+- **Frontend Framework**: Vue.js (via CDN)
+- **UI Components**: Bootstrap 5
+- **Styling**: Custom CSS with variables for theming
+- **Icons**: Bootstrap Icons
+- **Data Storage**: Client-side localStorage (for prototype)
+- **Development Tools**: Amazon Q for AI-assisted development
 
-3. **UI Wireframing (20 min)**
-   - Sketch login screen
-   - Plan employee and manager dashboards
+## Getting Started
 
-### Hour 2: Authentication & Navigation (1:00-2:00)
+1. Clone the repository
+2. Open `index.html` in your browser
+3. Login with sample credentials:
+   - Employee: username `Sophia`, password `pass`
+   - Employee: username `employee2`, password `pass`
+   - Manager: username `manager`, password `pass`
 
-1. **Authentication System (30 min)**
-   - Create login form
-   - Implement role-based view switching
-   - Store user session in localStorage
+## Future Enhancements
 
-2. **Navigation Structure (30 min)**
-   - Create navigation menu
-   - Implement conditional rendering based on role
-   - Build basic dashboard layouts
-
-### Hour 3: Employee Features (2:00-3:00)
-
-1. **Calendar Component (30 min)**
-   - Create biweekly calendar view
-   - Implement holiday highlighting
-   - Add date selection functionality
-
-2. **Time Entry Form (30 min)**
-   - Build hours input form
-   - Add validation for time entries
-   - Implement save functionality
-
-### Hour 4: Manager Features & Finalization (3:00-4:00)
-
-1. **Manager Approval Interface (30 min)**
-   - Create timesheet review list
-   - Add approve/reject buttons
-   - Implement feedback mechanism
-
-2. **Final Integration & Testing (30 min)**
-   - Connect all components
-   - Test user flows
-   - Fix critical bugs
-
-## Project Structure
-
-```
-/timesheet-app
-  index.html
-  /css
-    styles.css
-  /js
-    app.js
-    mock-data.js
-    components.js
-```
-
-## Implementation Tips
-
-### Keep It Simple
-
-1. **Use Vue.js via CDN**
-   - No build tools needed
-   - Quick to implement
-
-2. **Mock Data**
-   - Use JavaScript objects for data
-   - Store in localStorage for persistence
-
-3. **Minimal Styling**
-   - Use simple CSS or a CSS framework via CDN
-   - Focus on functionality over appearance
-
-## Presentation Strategy
-
-Demonstrate:
-1. Login as employee and enter time
-2. Show holiday restrictions
-3. Login as manager and approve/reject time
-4. Highlight the role-based access control
+- Data export functionality (CSV, PDF)
+- Notification system for pending approvals
+- Reporting features for managers
+- Integration with payroll systems
