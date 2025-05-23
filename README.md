@@ -29,14 +29,13 @@ This application was developed during a company-wide hackathon focused on levera
 - **Data Storage**: Client-side localStorage (for prototype)
 - **Development Tools**: Amazon Q for AI-assisted development
 
-## Getting Started
+## Login Credentials
 
-1. Clone the repository
-2. Open `index.html` in your browser
-3. Login with sample credentials:
-   - Employee: username `Sophia`, password `pass`
-   - Employee: username `employee2`, password `pass`
-   - Manager: username `manager`, password `pass`
+| Role     | Username   | Password |
+|----------|------------|----------|
+| Employee | `Sophia`   | `pass`   |
+| Employee | `employee2`| `pass`   |
+| Manager  | `manager`  | `pass`   |
 
 ## Future Enhancements
 
